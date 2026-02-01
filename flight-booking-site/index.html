@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHigh Airlines - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="glass-card login-card">
+            <h1 class="brand-title">SkyHigh</h1>
+            <p class="brand-subtitle">Your journey begins here.</p>
+
+            <form id="loginForm" class="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" class="input-field" placeholder=" " required>
+                    <label for="email" class="input-label">Email Address</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" class="input-field" placeholder=" " required>
+                    <label for="password" class="input-label">Password</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-login">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

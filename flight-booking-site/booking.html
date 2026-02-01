@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHigh Airlines - Passenger Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/booking.css">
+</head>
+
+<body>
+    <nav style="padding: 20px; background: rgba(15, 23, 42, 0.9);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="home.html" class="brand-title" style="font-size: 1.5rem; margin: 0;">SkyHigh</a>
+        </div>
+    </nav>
+
+    <div class="container" style="padding-top: 50px; padding-bottom: 50px;">
+        <div class="booking-layout">
+            <div class="glass-card">
+                <h2 class="section-title">Passenger Details</h2>
+                <form id="bookingForm">
+                    <div class="input-group">
+                        <input type="text" id="name" class="input-field" placeholder=" " required>
+                        <label for="name" class="input-label">Full Name (as on Passport)</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" id="passport" class="input-field" placeholder=" " required>
+                        <label for="passport" class="input-label">Passport Number</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" id="email" class="input-field" placeholder=" " required>
+                        <label for="email" class="input-label">Email for Confirmation</label>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="date" id="dob" class="input-field" placeholder=" " required>
+                        <label for="dob" class="input-label"
+                            style="top: -10px; left: 10px; font-size: 0.8rem; background-color: var(--background-dark); color: var(--primary-color);">Date
+                            of Birth</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Confirm &
+                        Pay</button>
+                    <p style="text-align: center; margin-top: 15px; color: var(--text-dim); font-size: 0.9rem;">
+                        By clicking "Confirm & Pay", you agree to our Terms and Conditions.
+                    </p>
+                </form>
+            </div>
+
+            <div class="summary-card">
+                <h3 style="margin-bottom: 20px;">Trip Summary</h3>
+                <div class="summary-row">
+                    <span>Route</span>
+                    <span id="summary-route">...</span>
+                </div>
+                <div class="summary-row">
+                    <span>Airline</span>
+                    <span id="summary-airline">...</span>
+                </div>
+                <div class="summary-row">
+                    <span>Date</span>
+                    <span id="summary-date">...</span>
+                </div>
+                <div class="summary-row">
+                    <span>Time</span>
+                    <span id="summary-time">...</span>
+                </div>
+
+                <div class="total-price">
+                    <span>Total</span>
+                    <span id="summary-price">...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

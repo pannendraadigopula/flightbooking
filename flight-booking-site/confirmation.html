@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHigh Airlines - Booking Confirmed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .confirm-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .ref-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 30px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 20px 0;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            font-family: monospace;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="confirm-container">
+        <div class="glass-card" style="max-width: 500px; padding: 3rem;">
+            <div class="success-icon">✓</div>
+            <h1 style="margin-bottom: 10px;">Booking Confirmed!</h1>
+            <p style="color: var(--text-dim); margin-bottom: 20px;">
+                You are all set. A confirmation email has been sent to your inbox.
+            </p>
+
+            <p>Booking Reference:</p>
+            <div id="booking-ref" class="ref-box">Pending...</div>
+
+            <p id="route-text" style="margin-bottom: 30px; font-weight: 600;"></p>
+
+            <button onclick="window.location.href='home.html'" class="btn btn-primary">Back to Home</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            const origin = params.get('origin');
+            const dest = params.get('dest');
+
+            document.getElementById('booking-ref').textContent = id || 'ERROR';
+            if (origin && dest) {
+                document.getElementById('route-text').textContent = `${origin} ✈ ${dest}`;
+            }
+        });
+    </script>
+</body>
+
+</html>

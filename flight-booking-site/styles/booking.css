@@ -1,0 +1,55 @@
+.booking-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.summary-card {
+    background: var(--surface-dark);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    position: sticky;
+    top: 100px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--text-dim);
+}
+
+.summary-row span:last-child {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.total-price {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .booking-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card {
+        position: static;
+        order: -1;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHigh Airlines - Find Your Flight</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/search.css">
+</head>
+
+<body>
+    <nav style="position: absolute; top: 0; width: 100%; z-index: 20; padding: 20px;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <h2 class="brand-title" style="font-size: 1.5rem; margin: 0;">SkyHigh</h2>
+            <button onclick="sessionStorage.clear(); window.location.href='index.html'" class="btn"
+                style="background: rgba(255,255,255,0.1); color: white;">Logout</button>
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="search-container">
+            <h1 class="search-title">Where to next?</h1>
+
+            <div class="glass-card">
+                <form id="searchForm" class="search-form">
+                    <div class="input-group">
+                        <select id="origin" class="input-field" required>
+                            <option value="" disabled selected hidden>From</option>
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <select id="destination" class="input-field" required>
+                            <option value="" disabled selected hidden>To</option>
+                            <!-- Populated by JS -->
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="date" id="date" class="input-field" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Search Flights</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="routes-map">
+            <div class="map-bg"></div>
+            <div style="z-index: 2; text-align: center;">
+                <h3>Global Route Network</h3>
+                <p>Connecting you to over 100 destinations worldwide.</p>
+                <!-- Visual placeholder for map -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/search.js"></script>
+
+    <!-- Set min date to today -->
+    <script>
+        document.getElementById('date').min = new Date().toISOString().split("T")[0];
+    </script>
+</body>
+
+</html>
